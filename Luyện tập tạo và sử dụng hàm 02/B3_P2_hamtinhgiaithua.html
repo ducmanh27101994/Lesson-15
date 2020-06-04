@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</title>
+</head>
+<body>
+
+<script>
+    function factorialNumber(number) {
+        let factorialNumber = 1;
+        if (number>=0){
+        for (let i = 1; i <= number; i++) {
+            factorialNumber = factorialNumber * i
+        }
+        document.write("Giai thừa của " + number + " là " + factorialNumber)
+    } else {
+            document.write ("Vui lòng nhập số khác")
+        }
+    }
+
+    factorialNumber(-1)
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+<h1>Chuyển đổi giữa feet và meters</h1>
+
+Feet: <input id="numberFeet" type="number" oninput="convertTemperatureFeet(this.value)" onchange="convertTemperatureFeet(this.value)">
+Meters:
+<p id="resultMeters"></p>
+<hr/>
+Meters: <input id="numberMeters" type="number" oninput="convertTemperatureMeters(this.value)" onchange="convertTemperatureMeters(this.value)">
+Feet:
+<p id="resultFeet"></p>
+
+<script>
+    function convertTemperatureFeet(feet) {
+        feet = parseInt(feet)
+        document.getElementById("resultMeters").innerHTML = (0.305 * feet);
+
+    }
+    function convertTemperatureMeters(meter) {
+        meter = parseInt(meter);
+        document.getElementById("resultFeet").innerHTML = (3.279 * meter);
+    }
+
+
+</script>
+</body>
+</html>

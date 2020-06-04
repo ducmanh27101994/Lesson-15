@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.</title>
+</head>
+<body>
+
+<script>
+    function findTheSmallestValue(a,b,c) {
+        let arr = [a,b,c];
+        let min = arr[0]
+        for (let i = 0; i <arr.length ; i++) {
+            if (arr[i] < min) {
+                min = arr[i]
+            }
+        }
+       document.write("Giá trị nhỏ nhất là: " + min);
+    }
+    findTheSmallestValue(-1,5,9)
+
+
+
+
+</script>
+
+</body>
+</html>
