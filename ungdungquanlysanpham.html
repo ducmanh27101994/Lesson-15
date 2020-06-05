@@ -39,10 +39,14 @@
 
     function displayListProduct() {
         let str = "";
-        let j = 0;
+
         for (let i = 0; i < products.length; i++) {
-                str += `<tr><td>${products[i][j]}</td><td>${products[i][j+1]}</td><td>${products[i][j+2]}</td><td><button onclick="editProduct(${i})" >Edit</button></td><td><button onclick="deleteProduct(${i})">Delete</button></td></tr>`
+            str += "<tr>"
+            for (let k = 0; k < 3; k++) {
+                str += `<td>${products[i][k]}</td>`
             }
+            str +=`<td><button onclick="editProduct(${i})">Edit</button></td><td><button onclick="deleteProduct(${i})">Delete</button></td></tr>`
+        }
 
         document.getElementById('listProduct').innerHTML = str;
     }
