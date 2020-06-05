@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+
+<script>
+
+
+    function isPalindrome(arr1) {
+        let arr = arr1.split("");
+        for (let i = 0; i < (arr.length/2) ; i++) {
+            if (arr[i] !== arr[arr.length-1-i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    console.log(isPalindrome("acbde"));//false
+    console.log(isPalindrome("acbbca"));//true
+
+
+
+    
+    
+</script>
+
+
+</body>
+</html>

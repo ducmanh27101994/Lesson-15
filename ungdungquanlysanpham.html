@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child() {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<h1>Add New Product</h1>
+<input id="inputProduct" type="text" placeholder="New Product">
+<input id="inputColor" type="text" placeholder="New Color">
+<input id="inputNature" type="text" placeholder="New Nature">
+<button onclick="addProduct()">Add</button>
+
+<h1>Display All Product</h1>
+<h3>Product Name</h3>
+
+<table id="listProduct" ></table>
+
+<script>
+    let products = [["Sony Xperia", "Màu đen", "Hàng còn mới"],
+        ["Samsung Galaxy", "Màu trắng", "Hàng cũ"],
+        ["Apple Iphone 6", "Màu Ghi", "Hàng đẹp"]
+    ];
+
+    function displayListProduct() {
+        let str = "";
+        let j = 0;
+        for (let i = 0; i < products.length; i++) {
+                str += `<tr><td>${products[i][j]}</td><td>${products[i][j+1]}</td><td>${products[i][j+2]}</td><td><button onclick="editProduct(${i})" >Edit</button></td><td><button onclick="deleteProduct(${i})">Delete</button></td></tr>`
+            }
+
+        document.getElementById('listProduct').innerHTML = str;
+    }
+
+    function addProduct() {
+        let phone = document.getElementById("inputProduct").value;
+        let color = document.getElementById("inputColor").value;
+        let nature = document.getElementById("inputNature").value;
+        products.push([phone,color,nature]);
+        displayListProduct()
+    }
+
+    function deleteProduct(index) {
+        products.splice(index,1);
+        displayListProduct()
+    }
+
+    function editProduct(index) {
+        let newProduct = prompt("Nhập giá trị bạn cần thay đổi: ");
+        let newColor = prompt("Nhập giá trị bạn cần thay đổi: ");
+        let newNature = prompt("Nhập giá trị bạn cần thay đổi: ");
+        products[index] = [newProduct,newColor,newNature]
+
+        displayListProduct()
+    }
+
+
+    displayListProduct()
+
+</script>
+
+</body>
+</html>
