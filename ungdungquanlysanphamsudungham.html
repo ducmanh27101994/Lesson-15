@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+<style>
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    tr:nth-child() {
+        background-color: #dddddd;
+    }
+    </style>
+</head>
+<body onload="renderListProduct()">
+
+<h1>Add New Product</h1>
+<input id="newProduct" type ="text" placeholder="New Product">
+<button id="btnAddProduct" onclick="buttonAddProduct()">Add</button>
+
+<h1>Display All Product</h1>
+<h3>Product Name</h3>
+<table id="list_product">
+
+</table>
+
+
+<script>
+    let products = document.getElementById("newProduct");
+
+    let listProducts = [];
+    listProducts.push({products});
+    function buttonAddProduct() {
+        let products = document.getElementById("newProduct").value;
+
+        let listProducts = [];
+        listProducts.push({products});
+
+        let tablePush = ` <tr>
+        <td>Sony Xperia</td>
+        <td><button type="button"  onclick="buttonEdit()">Edit</button></td>
+        <td><button type="button"  onclick="buttonDelete()">Delete</button></td>
+    </tr>`
+
+        listProducts.forEach(function insertProduct(product,index) {
+            index++;
+            tablePush += `<tr>
+        <td>${product.products}</td>
+        <td><button type="button"  onclick="buttonEdit()">Edit</button></td>
+        <td><button type="button"  onclick="buttonDelete()">Delete</button></td>
+    </tr>`
+        })
+
+    document.getElementById("list_product").innerHTML = tablePush;
+    }
+
+
+    function buttonDelete() {
+        listProducts.pop({products})
+
+        document.getElementById("list_product").innerHTML = "";
+    }
+
+    
+    
+    
+    
+</script>
+
+</body>
+</html>
